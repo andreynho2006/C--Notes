@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Csharp_Notes
 {
@@ -18,6 +19,17 @@ namespace Csharp_Notes
             bool equals = student1.Equals(student2);
             Console.WriteLine("Student1 si student2 have the same name?");
             Console.WriteLine(equals);
+
+            // => Lambda operator
+            string[] words = { "cherry", "apple", "blueberry" };
+            int shortestWordLength = words.Min((string w) => w.Length);
+
+            // test delegates
+            TestDelegate myDelegate = s => Console.WriteLine(s + " World");
+            myDelegate("Hello");
         }
+        // delegates
+        delegate void TestDelegate(string s);     
+        
     }
 }
